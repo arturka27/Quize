@@ -47,9 +47,11 @@ class View {
       console.log('твой ответ:', choices.selectedAnswer);
 
       if (choices.selectedAnswer === answers[1]) {
-        console.log('правильно, красава!\n');
+        Model.points += 50;
+        console.log('правильно, красава!\n',`кол-во поинтов: ${Model.points}`,'\n');
       } else {
-        console.log('я знаю,ты можешь лучше\n');
+        Model.points -= 30;
+        console.log('неправильно (\nя знаю,ты можешь лучше\n',`кол-во поинтов: ${Model.points}`,'\n');
       }
       if (answers.selectedTheme === '...выпустите, пожалуйста(') {
         return;
